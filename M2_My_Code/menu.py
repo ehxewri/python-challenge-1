@@ -117,7 +117,6 @@ while New_order:
                                         # Multiply the price by quantity for each item in the order list
                                         "Total":(menu_items[menu_selection]['Price']*item_quantity)
                         }
-                        grand_total=0
                         clear_screen()
                         print("Item name                 | Price  |  Qty  |   Total ")
                         print("--------------------------|--------|-------|-------------")
@@ -126,11 +125,13 @@ while New_order:
                             price_space=(" "*(7-int(len(str(locale.currency(order[key]['Price']))))))
                             qty_space=(" "*( 5-int(len(str(order[key]['Quantity' ])))))
                             total_space=(" "*( 12-int(len(str(locale.currency(order[key]['Total']))))))
-                            grand_total=grand_total+(order[key]['Total'])
                             print(order[key]['Menu_item'],item_space,price_space,locale.currency(order[key]['Price']),
                                 qty_space,order[key]['Quantity'],total_space,locale.currency(order[key]['Total']))
-                        gtotal_space= (" "*(35-int(len(str(locale.currency(grand_total))))))
-                        print(f"\nYour current total is{gtotal_space}{(locale.currency(grand_total))}\n")    
+                        # I could just sum the prices but this demostraded the  list comprehension 
+                        gtotal=[]
+                        gtotal = sum([((order[key]['Price'])*(order[key]['Quantity' ])) for key in order])
+                        gtotal_space= (" "*(34-int(len(str(gtotal)))))
+                        print(f"\nYour current total is{gtotal_space}{(locale.currency(gtotal))}\n")    
                         i2 = i2+1
                 else:
                     # Tell the customer they didn't select a menu option
@@ -165,7 +166,6 @@ while New_order:
     # 6. Loop through the items in the customer's order
     # 7. Store the dictionary items as variables
     # proposed changes
-    grand_total=0
     if order:
         clear_screen()
         print("Thank you for your order\n")
@@ -181,8 +181,10 @@ while New_order:
             # 10. Print the item name, price,quantity and subtotal
             print(order[key]['Menu_item'],item_space,price_space,locale.currency(order[key]['Price']),
             qty_space,order[key]['Quantity'],total_space,locale.currency(order[key]['Total']))
-        gtotal_space= (" "*(32-int(len(str(locale.currency(grand_total))))))
-        print(f"\nYour current total is{gtotal_space}{(locale.currency(grand_total))}\n")
+        gtotal=[]
+        gtotal = sum([((order[key]['Price'])*(order[key]['Quantity' ])) for key in order])
+        gtotal_space= (" "*(31-int(len(str(gtotal)))))
+        print(f"\nYour current total is{gtotal_space}{(locale.currency(gtotal))}\n")    
     else:
         clear_screen()
         print("Thank you for coming.\n")
@@ -192,10 +194,7 @@ while New_order:
     if input: 
         order_again=input("Would you like a new order(Y/N)? ").upper()
         if (order_again) == "Y":
-            clear_screen()
+            order.clear()
         else:
             New_order = False
-clear_screen()
-print("Bye Bye")
-input()
 clear_screen()
