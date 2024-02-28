@@ -1,5 +1,4 @@
 # Import Package to help with formatting currency
-# lets update the branch working
 import locale
 import json
 from pathlib import Path
