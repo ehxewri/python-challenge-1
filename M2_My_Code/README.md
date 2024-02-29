@@ -1,6 +1,5 @@
 # Pseudocode for Taken a customer order in a food delivery truck
 
-help
 ```
 I was not challenged by the initial assignement
 I wanted to come up with somehting that would requirement me to do more that just coding
