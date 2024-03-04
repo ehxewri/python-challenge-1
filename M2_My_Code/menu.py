@@ -2,7 +2,7 @@
 import locale
 import json
 from pathlib import Path
-# load the menu
+# load the menu. Is there extra credit? I put the menu in an external json file as it made the code too long
 # get the path
 script_dir = (Path(__file__).resolve()).parent
 # import initial menu
@@ -18,6 +18,7 @@ def clear_screen():
 # Menu dictionary
 # 1. Set up order list. Order list will store a list of dictionaries for
 # menu item name, item price, and quantity ordered
+# ! An order list is initialized. (2 points). I used a dictionary. Is that ok
 order ={}
 i2 = 1
 # Launch the store and present a greeting to the customer
@@ -40,6 +41,7 @@ while New_order:
         Print the options to choose from menu headings 
         (all the first level dictionary items in menu
         """
+        # !User is prompted for their menu item selection and it's saved as a variable menu_selection. (4 points)
         for key in menu.keys():
             print(f"{i}: {key}")
             # Store the menu category associated with its menu item number
@@ -135,6 +137,8 @@ while New_order:
                         gtotal_space= (" "*(34-int(len(str(gtotal)))))
                         # this is to test spacing issue print('help',gtotal_space,'  ',(len(str(gtotal))))
                         print(f"\nYour current total is{gtotal_space}{gtotal}\n")    
+                        # Print order test
+                        print (order)
                         i2 = i2+1
                 else:
                     # Tell the customer they didn't select a menu option
@@ -187,7 +191,10 @@ while New_order:
         gtotal = (locale.currency(sum([((order[key]['Price'])*(order[key]['Quantity' ])) for key in order])))
         gtotal_space= (" "*(44-int(len(str(gtotal)))))
         # this is to test spacing issue print('help',gtotal_space,'  ',(len(str(gtotal))))
-        print(f"\nYour total is{gtotal_space}{gtotal}\n")    
+        print(f"\nYour total is{gtotal_space}{gtotal}\n")
+        # export the order to a file. Im going to look at recalling an order by order number.. have to save it to do that
+        with open(f'{script_dir}\\my_order.json', 'w') as f:
+            order = json.dump(order, f,indent=4)
     else:
         clear_screen()
         print("Thank you for coming.\n")
