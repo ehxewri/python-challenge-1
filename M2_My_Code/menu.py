@@ -91,7 +91,7 @@ while New_order:
                 if menu_selection.isdigit():               
                     # Convert the menu selection to an integer (done with input)
                     menu_selection = int(menu_selection)
-                    # 4. Check if the menu selection is in the menu items
+                    # 4. Check if the menu selectionis in the menu items
                     if (menu_selection) in menu_items.keys():
                         # Store the item name as a variable (Opt out. not needed)
                         # Ask the customer for the quantity of the menu item
@@ -100,10 +100,12 @@ while New_order:
                         # Check if the quantity is a number, default to 1 if not
                         if item_quantity.isdigit():
                             item_quantity=(int(item_quantity))
+                            # prevent unrealistic quatity
+                            if item_quantity > 100: 
+                                item_quantity = 100                        
                         else:
                             item_quantity=(int(1))
-                        if item_quantity > 100: 
-                            item_quantity = 100
+
                         # print (f"""\n{menu_items[menu_selection]['Item name']}      \
                         # ${menu_items[menu_selection]['Price']}     \ 
                         # {'item_quantity'}   \
