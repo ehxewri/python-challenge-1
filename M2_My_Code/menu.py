@@ -46,10 +46,8 @@ while New_order:
             menu_items[i] = key
             # Add 1 to the menu item number
             i += 1
-
         # Get the customer's input
         menu_category = input("\nType menu number: ")
-
         # Check if the customer's input is a number
         if menu_category.isdigit():
             # Check if the customer's input is a valid option
@@ -121,16 +119,18 @@ while New_order:
                         print("Item name                 | Price  |  Qty  |   Total ")
                         print("--------------------------|--------|-------|-------------")
                         for key in order.keys():
-                            item_space=(" "*(25-int(len(str(order[key]['Menu_item'])))))
-                            price_space=(" "*(7-int(len(str(locale.currency(order[key]['Price']))))))
-                            qty_space=(" "*( 5-int(len(str(order[key]['Quantity' ])))))
-                            total_space=(" "*( 12-int(len(str(locale.currency(order[key]['Total']))))))
-                            print(order[key]['Menu_item'],item_space,price_space,locale.currency(order[key]['Price']),
-                                qty_space,order[key]['Quantity'],total_space,locale.currency(order[key]['Total']))
+                            item_space=(" "*(24-int(len(str(order[key]['Menu_item'])))))
+                            price_space=(" "*(5-int(len(str(locale.currency(order[key]['Price']))))))
+                            qty_space=(" "*( 4-int(len(str(order[key]['Quantity' ])))))
+                            total_space=(" "*( 8-int(len(str(locale.currency(order[key]['Total']))))))
+                            print (order[key]['Menu_item'],item_space,'|',price_space,
+                                locale.currency(order[key]['Price']),'|',qty_space,
+                                order[key]['Quantity'],'|',total_space,
+                                locale.currency(order[key]['Total']))
                         # I could just sum the prices but this demostraded the  list comprehension 
                         gtotal=[]
                         gtotal = sum([((order[key]['Price'])*(order[key]['Quantity' ])) for key in order])
-                        gtotal_space= (" "*(34-int(len(str(gtotal)))))
+                        gtotal_space= (" "*(32-int(len(str(gtotal)))))
                         print(f"\nYour current total is{gtotal_space}{(locale.currency(gtotal))}\n")    
                         i2 = i2+1
                 else:
