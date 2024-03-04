@@ -116,11 +116,12 @@ while New_order:
                                         "Total":(menu_items[menu_selection]['Price']*item_quantity)
                         }
                         clear_screen()
-                        print("Item name                 | Price  |  Qty  |   Total ")
-                        print("--------------------------|--------|-------|-------------")
+                        gtotal=[]
+                        print("Item name                 |  Price  |  Qty  |   Total ")
+                        print("--------------------------|---------|-------|-------------")
                         for key in order.keys():
                             item_space=(" "*(24-int(len(str(order[key]['Menu_item'])))))
-                            price_space=(" "*(5-int(len(str(locale.currency(order[key]['Price']))))))
+                            price_space=(" "*(6-int(len(str(locale.currency(order[key]['Price']))))))
                             qty_space=(" "*( 4-int(len(str(order[key]['Quantity' ])))))
                             total_space=(" "*( 8-int(len(str(locale.currency(order[key]['Total']))))))
                             print (order[key]['Menu_item'],item_space,'|',price_space,
@@ -128,10 +129,10 @@ while New_order:
                                 order[key]['Quantity'],'|',total_space,
                                 locale.currency(order[key]['Total']))
                         # I could just sum the prices but this demostraded the  list comprehension 
-                        gtotal=[]
-                        gtotal = sum([((order[key]['Price'])*(order[key]['Quantity' ])) for key in order])
-                        gtotal_space= (" "*(32-int(len(str(gtotal)))))
-                        print(f"\nYour current total is{gtotal_space}{(locale.currency(gtotal))}\n")    
+                        gtotal = (locale.currency(sum([((order[key]['Price'])*(order[key]['Quantity' ])) for key in order])))
+                        gtotal_space= (" "*(34-int(len(str(gtotal)))))
+                        # this is to test spacing issue print('help',gtotal_space,'  ',(len(str(gtotal))))
+                        print(f"\nYour current total is{gtotal_space}{gtotal}\n")    
                         i2 = i2+1
                 else:
                     # Tell the customer they didn't select a menu option
@@ -169,22 +170,22 @@ while New_order:
     if order:
         clear_screen()
         print("Thank you for your order\n")
-        print("This is what we are preparing for you.\n")
-        print("Item name                 | Price  | Qty |   Total ")
-        print("--------------------------|--------|-----|-----------")
+        print("Item name                 |  Price  |  Qty  |    Total ")
+        print("--------------------------|---------|-------|------------")
         for key in order.keys():
-            item_space=(" "*(25-int(len(str(order[key]['Menu_item'])))))
-            price_space=(" "*(7-int(len(str(locale.currency(order[key]['Price']))))))
-            qty_space=(" "*( 3-int(len(str(order[key]['Quantity' ])))))
-            total_space=(" "*( 11-int(len(str(locale.currency(order[key]['Total']))))))
-            # 11. Calculate the cost of the order using list comprehension        grand_total=grand_total+(order[key]['Total'])
-            # 10. Print the item name, price,quantity and subtotal
-            print(order[key]['Menu_item'],item_space,price_space,locale.currency(order[key]['Price']),
-            qty_space,order[key]['Quantity'],total_space,locale.currency(order[key]['Total']))
-        gtotal=[]
-        gtotal = sum([((order[key]['Price'])*(order[key]['Quantity' ])) for key in order])
-        gtotal_space= (" "*(31-int(len(str(gtotal)))))
-        print(f"\nYour current total is{gtotal_space}{(locale.currency(gtotal))}\n")    
+            item_space=(" "*(24-int(len(str(order[key]['Menu_item'])))))
+            price_space=(" "*(6-int(len(str(locale.currency(order[key]['Price']))))))
+            qty_space=(" "*( 4-int(len(str(order[key]['Quantity' ])))))
+            total_space=(" "*( 10-int(len(str(locale.currency(order[key]['Total']))))))
+            print (order[key]['Menu_item'],item_space,'|',price_space,
+                locale.currency(order[key]['Price']),'|',qty_space,
+                order[key]['Quantity'],'|',total_space,
+                locale.currency(order[key]['Total']))
+        # I could just sum the prices but this demostraded the  list comprehension 
+        gtotal = (locale.currency(sum([((order[key]['Price'])*(order[key]['Quantity' ])) for key in order])))
+        gtotal_space= (" "*(44-int(len(str(gtotal)))))
+        # this is to test spacing issue print('help',gtotal_space,'  ',(len(str(gtotal))))
+        print(f"\nYour total is{gtotal_space}{gtotal}\n")    
     else:
         clear_screen()
         print("Thank you for coming.\n")
