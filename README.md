@@ -17,16 +17,16 @@ To run this please clone the repo
 I'm using this command so it has to be run
 
     script_dir = (Path(__file__).resolve()).parent
+    
+This lets you run menu.py from any directory and it still finds my_menu.json as long as it is is the same dir as menu.py
 
-the following modules are imported to help make the output cleaner and keep the lenght shorter
+The following modules are imported to help make the output cleaner and keep the lenght shorter
 
         import locale
         
         import json
         
         from pathlib import Path
-
-This lets you run menu.py from any directory and it still finds my_menu.json as long as it is is the same dir as menu.py
 
 Additional modules i am playing with but not part of the assignment are
 
