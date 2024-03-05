@@ -4,6 +4,7 @@
 **This needs my_menu.json in the same dir as menu.py**
 ```
 To run this please clone the repo
+These files are required.
       menu.py
       my_menu.json
 
