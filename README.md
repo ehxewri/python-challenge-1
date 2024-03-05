@@ -14,14 +14,14 @@ The program will output a file called my_order.json.
       I used .gitignore to keep this file out of the github repo.
       It changes everytime i run the code and I did want to have to deal with that file changing
 I'm using this command so it can find the Json file
-    script_dir = (Path(__file__).resolve()).parent
+      script_dir = (Path(__file__).resolve()).parent
 This lets you run menu.py from any directory and it still finds my_menu.json as long as it is is the same dir as menu.py
 The following modules are imported to help make the output cleaner and keep the lenght shorter
-        import locale
-        import json
-        from pathlib import Path
+      import locale
+      import json
+      from pathlib import Path
 Additional modules i am playing with but not part of the assignment are
-  OrderPrintFunction.py - new order print function work in progress
-  loadmenu.py           - reset of first real lab Was used to develop the import on the menu from JSON
-  makemenu.py           - Creates the Json file to load in. this was another. 
+      OrderPrintFunction.py - new order print function work in progress
+      loadmenu.py           - reset of first real lab Was used to develop the import on the menu from JSON
+      makemenu.py           - Creates the Json file to load in. this was another. 
 ```
