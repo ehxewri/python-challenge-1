@@ -1,4 +1,4 @@
-# First PY program
+# Python Challenge 1 - The journey begins
 Code is in M2_My_Code
 
 to run this please clone the repo
