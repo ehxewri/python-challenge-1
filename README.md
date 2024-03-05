@@ -1,8 +1,9 @@
 # Python Challenge 1 - The journey begins
+```
 Code is in M2_My_Code
-
+```
 **This needs my_menu.json in the same dir as menu.py**
-"""
+```
 To run this please clone the repo
       python menu.py
       my_menu.json   **this needs my_menu.json in the same dir as menu.py**
@@ -21,7 +22,7 @@ I'm using this command so it has to be run
 This lets you run menu.py from any directory and it still finds my_menu.json as long as it is is the same dir as menu.py
 
 The following modules are imported to help make the output cleaner and keep the lenght shorter
-
+```
         import locale
         
         import json
