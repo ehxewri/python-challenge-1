@@ -5,9 +5,13 @@ Code is in M2_My_Code
 **This needs my_menu.json in the same dir as menu.py**
 ```
 To run this please clone the repo
-      python menu.py
+      menu.py
       my_menu.json   **this needs my_menu.json in the same dir as menu.py**
+
+To run the program (I wrote and tested with python 3.10)
       
+      python menu.py
+
 The program will output a file called my_order.json. 
       I want to play around with saving the orders so we can pull them back up if needed
 
