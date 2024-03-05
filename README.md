@@ -15,14 +15,23 @@ To run this please clone the repo
 
 
 I'm using this command so it has to be run
+
     script_dir = (Path(__file__).resolve()).parent
+
 the following modules are imported to help make the output cleaner and keep the lenght shorter
+
         import locale
+        
         import json
+        
         from pathlib import Path
+
 This lets you run menu.py from any directory and it still finds my_menu.json as long as it is is the same dir as menu.py
 
 Additional modules i am playing with but not part of the assignment are
+
   OrderPrintFunction.py - new order print function work in progress
+  
   loadmenu.py           - reset of first real lab Was used to develop the import on the menu from JSON
+  
   makemenu.py           - Creates the Json file to load in. this was another. 
