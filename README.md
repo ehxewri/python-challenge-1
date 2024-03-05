@@ -1,5 +1,6 @@
 # Python Challenge 1 - The journey begins
 Code is in M2_My_Code
+**this needs my_menu.json in the same dir as menu.py**
 ```
 To run this please clone the repo
       python menu.py
@@ -10,7 +11,7 @@ To run this please clone the repo
       I want to play around with saving the orders so we can pull them back up if needed
       i used.gitignore to keep this file out of the github repo. It changes everytime i run the code and I did want to have to deal with that file changing
 ```
-**this needs my_menu.json in the same dir as menu.py**
+
 
 I'm using this command so it has to be run
     script_dir = (Path(__file__).resolve()).parent
