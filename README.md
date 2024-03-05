@@ -1,6 +1,5 @@
 # Python Challenge 1 - The journey begins
-```
-Code is in M2_My_Code
+## Code is in python-challenge-1/M2_My_Code
 ```
 **This needs my_menu.json in the same dir as menu.py**
 ```
