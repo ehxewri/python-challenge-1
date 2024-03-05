@@ -1,11 +1,11 @@
 # Python Challenge 1 - The journey begins
 ## Code is in python-challenge-1/M2_My_Code
-```
+
 **This needs my_menu.json in the same dir as menu.py**
 ```
 To run this please clone the repo
       menu.py
-      my_menu.json   **this needs my_menu.json in the same dir as menu.py**
+      my_menu.json
 
 To run the program (I wrote and tested with python 3.10)
       
