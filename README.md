@@ -2,7 +2,7 @@
 Code is in M2_My_Code
 
 **This needs my_menu.json in the same dir as menu.py**
-
+"""
 To run this please clone the repo
       python menu.py
       my_menu.json   **this needs my_menu.json in the same dir as menu.py**
@@ -35,3 +35,5 @@ Additional modules i am playing with but not part of the assignment are
   loadmenu.py           - reset of first real lab Was used to develop the import on the menu from JSON
   
   makemenu.py           - Creates the Json file to load in. this was another. 
+
+  """
