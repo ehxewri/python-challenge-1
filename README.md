@@ -2,17 +2,17 @@
 Code is in M2_My_Code
 
 **This needs my_menu.json in the same dir as menu.py**
-```
+
 To run this please clone the repo
       python menu.py
       my_menu.json   **this needs my_menu.json in the same dir as menu.py**
-
-
-      The program will output a file called my_order.json. 
+      
+The program will output a file called my_order.json. 
       I want to play around with saving the orders so we can pull them back up if needed
-      i used.gitignore to keep this file out of the github repo. It changes everytime i run the code and I did want to have to deal with that file changing
-```
 
+      I used .gitignore to keep this file out of the github repo.
+
+      It changes everytime i run the code and I did want to have to deal with that file changing
 
 I'm using this command so it has to be run
 
