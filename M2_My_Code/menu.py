@@ -138,7 +138,7 @@ while New_order:
                         # this is to test spacing issue print('help',gtotal_space,'  ',(len(str(gtotal))))
                         print(f"\nYour current total is{gtotal_space}{gtotal}\n")    
                         # Print order test
-                        print (order)
+                        # print (order)
                         i2 = i2+1
                 else:
                     # Tell the customer they didn't select a menu option
@@ -208,3 +208,6 @@ while New_order:
         else:
             New_order = False
 clear_screen()
+print("Thank you for coming.\n")
+print("We will miss you. Have a great day!")
+input()
